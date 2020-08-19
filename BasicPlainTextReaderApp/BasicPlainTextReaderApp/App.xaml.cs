@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using BasicPlainTextReaderApp.Services;
 using BasicPlainTextReaderApp.Views;
 
 namespace BasicPlainTextReaderApp
@@ -13,7 +12,6 @@ namespace BasicPlainTextReaderApp
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 

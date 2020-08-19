@@ -10,7 +10,8 @@ namespace BasicPlainTextReaderApp.ViewModels
         public AboutViewModel()
         {
             Title = "About";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamain-quickstart"));
+            OpenWebCommand = new Command(async () => await Browser.OpenAsync(Constants.AboutUrl));
+            OpenWebCommand = new Command(async () => await Shell.Current.GoToAsync("//LoginPage"));
         }
 
         public ICommand OpenWebCommand { get; }
