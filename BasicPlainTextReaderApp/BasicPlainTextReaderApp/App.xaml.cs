@@ -7,11 +7,12 @@ namespace BasicPlainTextReaderApp
 {
     public partial class App : Application
     {
-
-        public App()
+        string _text;
+        public App(string text = null)
         {
             InitializeComponent();
 
+            _text = text;
             MainPage = new AppShell();
         }
 
