@@ -88,6 +88,10 @@
     <AndroidResource Include="Resources\drawable\tab_feed.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BasicPlainTextReaderApp.Library\BasicPlainTextReaderApp.Library.csproj">
+      <Project>{F889341B-08D1-4416-A989-D0E03D434B11}</Project>
+      <Name>BasicPlainTextReaderApp.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BasicPlainTextReaderApp\BasicPlainTextReaderApp.csproj">
       <Project>{6327818D-35B3-4749-82F8-108F4C4ED810}</Project>
       <Name>BasicPlainTextReaderApp</Name>

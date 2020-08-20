@@ -14,4 +14,14 @@
     <Folder Include="Models\" />
     <Folder Include="Services\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BasicPlainTextReaderApp.Library\BasicPlainTextReaderApp.Library.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\TextPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

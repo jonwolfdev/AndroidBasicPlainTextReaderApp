@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BasicPlainTextReaderApp.Views.TextPage"
+             xmlns:vm="clr-namespace:BasicPlainTextReaderApp.ViewModels"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Info" Clicked="ToolbarItem_Clicked" x:Name="InfoItem" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.BindingContext>
+        <vm:TextPageViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="There is no text. Try opening a text file (txt) from the default file app with Basic Plain Text Reader app"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   IsVisible="{Binding ShowPlaceholderText}" Padding="10,10,10,10" d:IsVisible="false"/>
+            <Label Text="{Binding Path=TModel.Text}" IsVisible="{Binding ShowText}" d:IsVisible="true" d:Text="Text file goes here"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

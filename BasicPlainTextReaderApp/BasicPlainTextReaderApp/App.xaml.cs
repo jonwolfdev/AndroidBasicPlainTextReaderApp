@@ -2,22 +2,34 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BasicPlainTextReaderApp.Views;
+using BasicPlainTextReaderApp.Library;
 
 namespace BasicPlainTextReaderApp
 {
     public partial class App : Application
     {
-        string _text;
-        public App(string text = null)
+        readonly TextModel _data;
+        public App(TextModel data = null)
         {
             InitializeComponent();
 
-            _text = text;
-            MainPage = new AppShell();
+            _data = data;
+            MainPage = new AppShell(this);
+        }
+
+        public void GoToCurrentTextPage()
+        {
+            var page = new TextPage(_data);
+            Shell.Current.Navigation.PushAsync(page);
+            Shell.Current.FlyoutIsPresented = false;
         }
 
         protected override void OnStart()
         {
+            if(_data != null)
+            {
+                GoToCurrentTextPage();
+            }
         }
 
         protected override void OnSleep()

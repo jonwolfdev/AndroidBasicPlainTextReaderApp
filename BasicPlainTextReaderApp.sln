@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicPlainTextReaderApp.Android", "BasicPlainTextReaderApp\BasicPlainTextReaderApp.Android\BasicPlainTextReaderApp.Android.csproj", "{C1C3CE2C-4ABB-442E-96BE-1F5B2AD8DBDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicPlainTextReaderApp", "BasicPlainTextReaderApp\BasicPlainTextReaderApp\BasicPlainTextReaderApp.csproj", "{CA1AEA98-AE84-4763-A402-A993868615F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicPlainTextReaderApp", "BasicPlainTextReaderApp\BasicPlainTextReaderApp\BasicPlainTextReaderApp.csproj", "{CA1AEA98-AE84-4763-A402-A993868615F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicPlainTextReaderApp.Library", "BasicPlainTextReaderApp.Library\BasicPlainTextReaderApp.Library.csproj", "{F889341B-08D1-4416-A989-D0E03D434B11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{CA1AEA98-AE84-4763-A402-A993868615F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA1AEA98-AE84-4763-A402-A993868615F1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CA1AEA98-AE84-4763-A402-A993868615F1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F889341B-08D1-4416-A989-D0E03D434B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F889341B-08D1-4416-A989-D0E03D434B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F889341B-08D1-4416-A989-D0E03D434B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F889341B-08D1-4416-A989-D0E03D434B11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

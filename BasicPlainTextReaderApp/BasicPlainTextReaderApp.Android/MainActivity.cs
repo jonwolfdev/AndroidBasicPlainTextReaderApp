@@ -10,6 +10,7 @@ using Android.OS;
 using System.IO;
 using Android.Provider;
 using System.Text;
+using BasicPlainTextReaderApp.Library;
 
 namespace BasicPlainTextReaderApp.Droid
 {
@@ -25,9 +26,10 @@ namespace BasicPlainTextReaderApp.Droid
         {
             string action = Intent.Action;
             string type = Intent.Type;
-            StringBuilder sb = null;
 
-            if(Intent.ActionView.Equals(action) && !string.IsNullOrEmpty(type))
+            TextModel data = null;
+
+            if (Intent.ActionView.Equals(action) && !string.IsNullOrEmpty(type))
             {
                 Android.Net.Uri fileUri = Intent.Data;
                 if (fileUri != null)
@@ -40,17 +42,17 @@ namespace BasicPlainTextReaderApp.Droid
                         using (var bufferedReader = new Java.IO.BufferedReader(reader))
                         {
                             string line;
-                            sb = new StringBuilder();
+                            var sb = new StringBuilder();
                             while ((line = bufferedReader.ReadLine()) != null)
                             {
                                 sb.AppendLine(line);
                             }
+                            data = new TextModel(sb.ToString(), Intent.DataString, Intent.Type, Intent.Data.Path);
                         }
                     }
                     catch (Exception e)
                     {
-                        sb = new StringBuilder();
-                        sb.AppendLine(e.ToString());
+                        data = new TextModel(e.ToString(), "error", "error", "error");
                     }
                 }
             }
@@ -62,7 +64,7 @@ namespace BasicPlainTextReaderApp.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App(sb.ToString()));
+            LoadApplication(new App(data));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
