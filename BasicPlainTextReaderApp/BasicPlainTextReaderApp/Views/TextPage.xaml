@@ -19,12 +19,12 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="There is no text. Try opening a text file (txt) from the default file app with Basic Plain Text Reader app"
+            <Label Text="There is no text. Try opening a text file (txt or any other type) from the default file app with Basic Plain Text Reader app"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
                    IsVisible="{Binding ShowPlaceholderText}" Padding="10,10,10,10" d:IsVisible="false"/>
-            <ScrollView IsVisible="{Binding ShowText}">
-                <Label Text="{Binding Path=TModel.Text}" IsVisible="{Binding ShowText}" d:IsVisible="true" d:Text="Text file goes here" FontSize="Small" />
+            <ScrollView IsVisible="{Binding ShowText}" InputTransparent="True">
+                <Label Text="{Binding Path=TModel.Text}" IsVisible="{Binding ShowText}" d:IsVisible="true" d:Text="Text file goes here" Padding="2,2,2,2" FontSize="Small" />
             </ScrollView>
         </StackLayout>
         

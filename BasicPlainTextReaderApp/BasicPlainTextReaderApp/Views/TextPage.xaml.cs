@@ -22,6 +22,7 @@ namespace BasicPlainTextReaderApp.Views
 
             _vm = BindingContext as TextPageViewModel;
             _vm.InfoItem = InfoItem;
+            _vm.SearchItem = SearchItem;
             _vm.TModel = null;
 
             MessagingCenter.Subscribe<TextModel>(this, "TextData", (data) =>
@@ -49,9 +50,7 @@ namespace BasicPlainTextReaderApp.Views
 
             string search = await DisplayPromptAsync("Search for", "Enter the text to search for", "Search", "Cancel", "search for...");
             if (string.IsNullOrEmpty(search))
-            {
                 return;
-            }
 
             await Shell.Current.Navigation.PushAsync(new SearchedTextPage(_vm.TModel, search));
         }

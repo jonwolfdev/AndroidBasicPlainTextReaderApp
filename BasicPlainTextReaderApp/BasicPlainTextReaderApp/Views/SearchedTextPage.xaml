@@ -15,6 +15,7 @@
 
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="{Binding QuantityFound, StringFormat='Found {0} matches'}" />
             <Label Text="Tap one and it will be copied to clipboard" />
             <ScrollView x:Name="ScrollViewCtrl">
                 

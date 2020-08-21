@@ -31,8 +31,7 @@ namespace BasicPlainTextReaderApp.Droid
 
             if (Intent.ActionView.Equals(action) && !string.IsNullOrEmpty(type))
             {
-                Android.Net.Uri fileUri = Intent.Data;
-                if (fileUri != null)
+                if (Intent.Data != null)
                 {
                     try
                     {
@@ -52,7 +51,7 @@ namespace BasicPlainTextReaderApp.Droid
                     }
                     catch (Exception e)
                     {
-                        data = new TextModel(e.ToString(), "error", "error", "error");
+                        data = new TextModel(e.ToString(), Intent.DataString, Intent.Type, Intent.Data.Path);
                     }
                 }
             }

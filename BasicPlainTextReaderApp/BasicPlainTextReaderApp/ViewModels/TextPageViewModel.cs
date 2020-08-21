@@ -10,11 +10,9 @@ namespace BasicPlainTextReaderApp.ViewModels
     {
         TextModel _model;
         public ToolbarItem InfoItem { get; set; }
+        public ToolbarItem SearchItem { get; set; }
         public TextPageViewModel()
         {
-            ShowPlaceholderText = true;
-            ShowText = false;
-            Title = "No text!";
         }
 
         public TextModel TModel
@@ -29,12 +27,15 @@ namespace BasicPlainTextReaderApp.ViewModels
 
                     Title = value.DataPath;
                     InfoItem.IsEnabled = true;
+                    SearchItem.IsEnabled = true;
                 }
                 else
                 {
+                    Title = "No text!";
                     ShowPlaceholderText = true;
                     ShowText = false;
                     InfoItem.IsEnabled = false;
+                    SearchItem.IsEnabled = false;
                 }
                 SetProperty(ref _model, value);
             }
