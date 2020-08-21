@@ -15,15 +15,21 @@ namespace BasicPlainTextReaderApp.Views
     public partial class TextPage : ContentPage
     {
         readonly TextPageViewModel _vm;
-        public TextPage(TextModel model = null)
+        
+        public TextPage()
         {
             InitializeComponent();
 
             _vm = BindingContext as TextPageViewModel;
             _vm.InfoItem = InfoItem;
-            _vm.TModel = model;
-        }
+            _vm.TModel = null;
 
+            MessagingCenter.Subscribe<TextModel>(this, "TextData", (data) =>
+            {
+                _vm.TModel = data;
+            });
+        }
+        
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             if (_vm.TModel == null)
@@ -34,6 +40,20 @@ namespace BasicPlainTextReaderApp.Views
                 "DataPath: " + _vm.TModel.DataPath + Environment.NewLine +
                 "DataString: " + _vm.TModel.DataString,
                 "Close");
+        }
+
+        private async void SearchItem_Clicked(object sender, EventArgs e)
+        {
+            if (_vm.TModel == null)
+                return;
+
+            string search = await DisplayPromptAsync("Search for", "Enter the text to search for", "Search", "Cancel", "search for...");
+            if (string.IsNullOrEmpty(search))
+            {
+                return;
+            }
+
+            await Shell.Current.Navigation.PushAsync(new SearchedTextPage(_vm.TModel, search));
         }
     }
 }

@@ -10,6 +10,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Info" Clicked="ToolbarItem_Clicked" x:Name="InfoItem" />
+        <ToolbarItem Text="Search" Clicked="SearchItem_Clicked" x:Name="SearchItem" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.BindingContext>
@@ -22,7 +23,9 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
                    IsVisible="{Binding ShowPlaceholderText}" Padding="10,10,10,10" d:IsVisible="false"/>
-            <Label Text="{Binding Path=TModel.Text}" IsVisible="{Binding ShowText}" d:IsVisible="true" d:Text="Text file goes here"/>
+            <ScrollView IsVisible="{Binding ShowText}">
+                <Label Text="{Binding Path=TModel.Text}" IsVisible="{Binding ShowText}" d:IsVisible="true" d:Text="Text file goes here" FontSize="Small" />
+            </ScrollView>
         </StackLayout>
         
     </ContentPage.Content>

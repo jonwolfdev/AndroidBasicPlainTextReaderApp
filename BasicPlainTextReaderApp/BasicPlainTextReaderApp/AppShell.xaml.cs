@@ -19,7 +19,7 @@ namespace BasicPlainTextReaderApp
 
         private void OnMenuItemClicked(object sender, EventArgs e)
         {
-            _parent.GoToCurrentTextPage();
+            _parent.GoToTextPage();
         }
     }
 }

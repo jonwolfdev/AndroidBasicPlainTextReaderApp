@@ -8,28 +8,36 @@ namespace BasicPlainTextReaderApp
 {
     public partial class App : Application
     {
-        readonly TextModel _data;
         public App(TextModel data = null)
         {
             InitializeComponent();
 
-            _data = data;
-            MainPage = new AppShell(this);
+            if (data == null)
+            {
+                MainPage = new AppShell(this);
+            }
+            else
+            {
+                MainPage = new AppShellOpenWith(this, data);
+            }
         }
 
-        public void GoToCurrentTextPage()
+        public void GoToTextPage()
         {
-            var page = new TextPage(_data);
+            var page = new TextPage();
+            Shell.Current.Navigation.PushAsync(page);
+            Shell.Current.FlyoutIsPresented = false;
+        }
+        public void GoToAboutPage()
+        {
+            var page = new AboutPage();
             Shell.Current.Navigation.PushAsync(page);
             Shell.Current.FlyoutIsPresented = false;
         }
 
         protected override void OnStart()
         {
-            if(_data != null)
-            {
-                GoToCurrentTextPage();
-            }
+            
         }
 
         protected override void OnSleep()
@@ -38,6 +46,11 @@ namespace BasicPlainTextReaderApp
 
         protected override void OnResume()
         {
+            //TODO: not sure if this is needed
+            //if (MainPage is AppShellOpenWith shell)
+            //{
+            //    shell.SetTextData();
+            //}
         }
     }
 }

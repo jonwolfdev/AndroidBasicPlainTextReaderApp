@@ -7,5 +7,6 @@ namespace BasicPlainTextReaderApp
     public static class Constants
     {
         public const string AboutUrl = "https://github.com/jonwolfdev/AndroidBasicPlainTextReaderApp";
+        public const int SearchTextGetFromSides = 25;
     }
 }
