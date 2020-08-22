@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicPlainTextReaderApp.And
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicPlainTextReaderApp", "BasicPlainTextReaderApp\BasicPlainTextReaderApp\BasicPlainTextReaderApp.csproj", "{CA1AEA98-AE84-4763-A402-A993868615F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicPlainTextReaderApp.Library", "BasicPlainTextReaderApp.Library\BasicPlainTextReaderApp.Library.csproj", "{F889341B-08D1-4416-A989-D0E03D434B11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicPlainTextReaderApp.Library", "BasicPlainTextReaderApp.Library\BasicPlainTextReaderApp.Library.csproj", "{F889341B-08D1-4416-A989-D0E03D434B11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicPlainTextReaderApp.UnitTests", "BasicPlainTextReaderApp.UnitTests\BasicPlainTextReaderApp.UnitTests.csproj", "{CCA174D5-E76D-4A84-B434-99B45252426D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicPlainTextReaderApp.UnitTests", "BasicPlainTextReaderApp.UnitTests\BasicPlainTextReaderApp.UnitTests.csproj", "{CCA174D5-E76D-4A84-B434-99B45252426D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicPlainTextReaderApp.UITests", "BasicPlainTextReaderApp.UITests\BasicPlainTextReaderApp.UITests.csproj", "{F7E12857-6DFB-4327-9203-8BF1EEFA7B2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{CCA174D5-E76D-4A84-B434-99B45252426D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCA174D5-E76D-4A84-B434-99B45252426D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCA174D5-E76D-4A84-B434-99B45252426D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7E12857-6DFB-4327-9203-8BF1EEFA7B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7E12857-6DFB-4327-9203-8BF1EEFA7B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7E12857-6DFB-4327-9203-8BF1EEFA7B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7E12857-6DFB-4327-9203-8BF1EEFA7B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

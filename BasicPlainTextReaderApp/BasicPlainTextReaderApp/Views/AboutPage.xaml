@@ -29,7 +29,7 @@
         </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Basic Text Reader App" FontSize="Title"/>
+                <Label Text="Basic Text Reader App" FontSize="Title" AutomationId="TitleAboutAi" x:Uid="TitleAboutId" x:Name="TitleAboutName" />
                 <Label Text="This app tries to read any file as plaint text! And it doesn't save any temporarily hidden file like other text editors do!" FontSize="16" Padding="0,0,0,0"/>
                 <Label Text="Author" FontSize="Title"/>
                 <Label Text="Made by @jonwolfdev"/>
